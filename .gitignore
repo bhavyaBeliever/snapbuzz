@@ -1,0 +1,64 @@
+# Ignore vscode settings
+.vscode/
+
+# Ignore environment variables
+.env
+
+# Ignore node_modules
+node_modules/
+
+# Ignore logs
+logs
+*.log
+
+# Ignore runtime data
+pids
+*.pid
+*.seed
+
+# Ignore OS specific files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# Ignore editor settings, for the most part
+*.sublime-workspace
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.user
+*.vsx
+*.soap
+*.reSharper
+testUserSettings.xml
+*.dbmdl
+
+# Ignore build results
+bin
+obj
+Debug
+Release
+x64
+Any CPU
+BuildWebDeployment
+
+# Ignore NuGet Packages
+*.nupkg
+
+# Ignore the build Web Deployment zip
+WebApplication.zip
+
+# Ignore the publish folder
+publish
+
+# Ignore App_Data folder
+App_Data
+
+# Ignore App_Data folder
+App_Data/
