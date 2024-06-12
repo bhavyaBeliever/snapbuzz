@@ -62,25 +62,8 @@ const userSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
-UserSchema.statics.authenticate = async function (identifier, password) {
-  let user;
-  if (identifier.includes("@") && identifier.includes(".com")) {
-    user = await this.findOne({ email: identifier });
-  } else if(!isNaN(Number(identifier)) && identifier.trim() !== '') {
-    user = await this.findOne({ phone: identifier });
-  } else {
-    user = await this.findOne({ username: identifier });
-  }
-
-  if (!user) {
-    throw new Error("Invalid Credentials");
-  }
-
-  const isPasswordValid = await bcrypt.compare(password, user.password);
-  if (!isPasswordValid) {
-    throw new Error("Wrong Password");
-  }
-
-  return user;
-};
+// UserSchema.statics.authenticate = async function (identifier, password) {
+  // let user;
+  
+//};
 module.exports = mongoose.model("User", userSchema);
