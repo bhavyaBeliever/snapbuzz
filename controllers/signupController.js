@@ -12,6 +12,7 @@ const signupController = async (req, res) => {
     await newUser.save();
     console.log("User Created");
     //sending response
+
     res.status(200).json(newUser);
   }
   catch (error) {
@@ -26,6 +27,7 @@ const signupController = async (req, res) => {
     }
     res.status(500).json({ error: "Please try again..." });
     return;
+
   }
 }
 
