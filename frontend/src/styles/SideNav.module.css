@@ -1,0 +1,34 @@
+.sideNav{
+  width: 250px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0; 
+  background-color: black;
+  color: white;
+  font-size: larger;
+  
+}
+.sideNavLogo{
+  text-align: center;
+  margin-top: 20px;
+}
+.sideNavLogo img{
+  width: 150px;
+  height: auto;
+}
+.options{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 40px;
+  margin-top: 15px;
+  font-size: 24px;
+
+}
+.options a{
+  margin: 20px;
+  text-decoration: none;
+  color: white;
+}
+
