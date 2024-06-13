@@ -29,7 +29,7 @@ const Login = () => {
         title: 'Login Successful',
       });
       dispatch({ type: 'LOGIN', payload: data });
-      console.log(data);
+      localStorage.setItem('user', JSON.stringify(data));
     } else {
       Swal.fire({
         icon: 'error',
