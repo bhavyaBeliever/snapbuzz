@@ -1,13 +1,31 @@
+.navbar{
+  margin: 0;
+  padding: 0;
+}
 .sideNav{
-  width: 250px;
-  height: 100%;
   position: fixed;
+  height: 100%;
   top: 0;
   left: 0; 
   background-color: black;
   color: white;
+  border-width: 0px;
+  border-right: 1px;
+  border-color: white;
+  border-style: solid;
   font-size: larger;
-  
+
+
+}
+.sideNav.expanded {
+  width: 250px;
+  transition-duration: 0.25s;
+
+}
+
+.sideNav.collapsed {
+  width: 75px;
+  transition-duration: 0.25s;
 }
 .sideNavLogo{
   text-align: center;
@@ -17,18 +35,51 @@
   width: 150px;
   height: auto;
 }
+.list{
+  top:135px
+}
 .options{
   display: flex;
   flex-direction: row;
-  align-items: center;
-  margin-left: 40px;
-  margin-top: 15px;
   font-size: 24px;
 
 }
-.options a{
-  margin: 20px;
-  text-decoration: none;
-  color: white;
-}
 
+
+.optionsLink{
+  text-decoration: none;
+  margin-top: 45px;
+  margin-left: 20px;
+  color: white;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+
+}
+.search{
+  position: absolute;
+  width: 350px;
+  height: 100%;
+  margin-left:76px;
+  background-color: black;
+  border: 0.5px solid white;
+  border-radius: 10px; 
+  transition-duration: 0.5s;
+  top: 0px;
+  padding: 15px;
+  /* overflow: visible; */
+  display: inline-block;
+}
+.collapseIcon{
+  /* padding-right: 20px; */
+  font-size: 40px;
+  color: white;
+  /* margin-right: 15px; */
+
+}
+.expandIcon{
+  padding-right: 20px;
+  font-size: 30px; ;
+}
