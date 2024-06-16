@@ -5,6 +5,6 @@ const accessUsernameController  = require('../controllers/accessUsernameControll
 const router=express.Router();
 
 router.post('/login',loginController)
-router.get('/getUsername', accessUsernameController)
 router.post('/signup',signupController)
-module.exports=router
+
+module.exports=router;

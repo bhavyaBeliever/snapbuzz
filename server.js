@@ -3,6 +3,8 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 const cors = require("cors");//imported to get end to end access of req and res
 const user = require("./routes/user");
+const userInfo = require("./routes/userInfo");
+
 const port=4000;
 
 const app=express();
@@ -13,7 +15,8 @@ app.get("/",(req,res)=>{
 //routes
 app.use(cors());
 app.use(express.json());
-app.use("/user",user)
+app.use("/user",user);
+app.use("/users", userInfo)
 
 //connect to db
 mongoose
