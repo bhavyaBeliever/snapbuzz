@@ -1,0 +1,16 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  
+}
+.container{
+  padding: 50px;
+  margin: 0px;
+  padding-left: 300.25px;
+  color: white; 
+  background: black;
+  
+}
+.container p{
+  padding: 20px;
+}
