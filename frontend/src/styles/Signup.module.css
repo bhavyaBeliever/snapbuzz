@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-body{
+.body{
+  margin-top: 75px;
   font-family: "Inter", sans-serif;
   font-size: 20px;
   font-weight: 400;
   color: rgb(252, 191, 191);
+  background-color: whitesmoke;
 }
 .signupForm {
   margin-left: 50%;

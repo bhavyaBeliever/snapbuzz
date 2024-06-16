@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { MdLock, MdCheck } from 'react-icons/md';
 import { RxCross2 } from "react-icons/rx";
-import styles from '../styles/Signup.module.css';
+import style from '../styles/Signup.module.css';
 import Swal from 'sweetalert2';
 import { useAuthContext } from '../hooks/useAuthContext';
 
@@ -20,7 +20,7 @@ const SignUp = () => {
   const [isLoading, setIsLoading] = useState(false); 
   const [error, setError] = useState("");
   useEffect(() => {
-    fetch('/user/getUsername')
+    fetch('/users/getUsersInfo')
       .then(response => response.json())
       .then(data => {
         setUsernameList(data);
@@ -99,35 +99,35 @@ const SignUp = () => {
     }
   }
   return (
-    <div>
-      <form onSubmit={handleSubmit} method='post' className={styles.signupForm}>
+    <div className={style.body}>
+      <form onSubmit={handleSubmit} method='post' className={style.signupForm}>
         <h1>Sign Up</h1>
         {error && <p>{error}</p>}
-        <label className={styles.signupLabel}>
+        <label className={style.signupLabel}>
           First Name:
-          <input type="text" name="firstName" value={firstName} onChange={(e) => setFirstName(e.target.value)} className={styles.signupInput} required />
+          <input type="text" name="firstName" value={firstName} onChange={(e) => setFirstName(e.target.value)} className={style.signupInput} required />
         </label>
 
-        <label className={styles.signupLabel}>
+        <label className={style.signupLabel}>
           Last Name:
-          <input type="text" name="lastName" value={lastName} onChange={(e) => { setLastName(e.target.value) }} className={styles.signupInput}required />
+          <input type="text" name="lastName" value={lastName} onChange={(e) => { setLastName(e.target.value) }} className={style.signupInput}required />
         </label>
 
-        <label className={styles.signupLabel}>
+        <label className={style.signupLabel}>
           Email:
-          <input type="email" name="email" value={email} onChange={(e) => { setEmail(e.target.value) }} className={styles.signupInput} required />
+          <input type="email" name="email" value={email} onChange={(e) => { setEmail(e.target.value) }} className={style.signupInput} required />
         </label>
 
-        <label className={styles.signupLabel}>
+        <label className={style.signupLabel}>
           Phone Number:
-          <input type="tel" name="phone" value={phone} onChange={(e) => { setPhone(e.target.value) }} className={styles.signupInput} required />
+          <input type="tel" name="phone" value={phone} onChange={(e) => { setPhone(e.target.value) }} className={style.signupInput} required />
         </label>
 
-        <label className={styles.signupLabel}>
+        <label className={style.signupLabel}>
 
           Username:
-          <span className={styles.signupSpan}>
-            <input type="text" name="username" value={username} onChange={checkUsername} className={styles.signupInput} required />
+          <span className={style.signupSpan}>
+            <input type="text" name="username" value={username} onChange={checkUsername} className={style.signupInput} required />
 
             {
               validUsername ? 
@@ -136,17 +136,17 @@ const SignUp = () => {
             }
           </span>
         </label>
-        <label className={styles.signupLabel}>
+        <label className={style.signupLabel}>
           Password:
-          <span className={styles.signupSpan}>
-            <input type="password" name="password" value={password} onChange={(e) => { setPassword(e.target.value) }} className={styles.signupInput} required />
+          <span className={style.signupSpan}>
+            <input type="password" name="password" value={password} onChange={(e) => { setPassword(e.target.value) }} className={style.signupInput} required />
             <MdLock style={{ marginLeft: "10px", fontSize: "20px" }} /> 
           </span>
         </label>
-        <label className={styles.signupLabel}>
+        <label className={style.signupLabel}>
           Confirm Password:
-          <span className={styles.signupSpan}>
-            <input type="password" name="confirmPassword" value={confirmPassword} onChange={checkPassword} className={styles.signupInput} required />
+          <span className={style.signupSpan}>
+            <input type="password" name="confirmPassword" value={confirmPassword} onChange={checkPassword} className={style.signupInput} required />
             {
               validPassword ? 
               <MdCheck style={{ marginLeft: "10px", fontSize: "20px" }} /> : 
@@ -154,7 +154,7 @@ const SignUp = () => {
             }
           </span>
         </label>
-        <button type="submit" className={styles.signupButton} >{isLoading ? "Loading..." : "Sign Up"}</button>
+        <button type="submit" className={style.signupButton} >{isLoading ? "Loading..." : "Sign Up"}</button>
       </form>
     </div>
   );
