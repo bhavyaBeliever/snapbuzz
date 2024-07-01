@@ -15,7 +15,7 @@ import Search from '../components/Search';
 const SideNav = () => {
   const [isExpanded, setIsExpanded] = useState(true);
   const [searchbox, setSearchbox] = useState(false);
-
+  const [usersInfo, setUsersInfo] = useState([]);
   const { dispatch } = useAuthContext();
   const location = useLocation()
   const pathName = location.pathname;
@@ -25,10 +25,11 @@ const SideNav = () => {
     dispatch({ type: 'LOGOUT', payload: null });
 
   }
-  const handleSearch = (e) => {
+  const handleSearch = async (e) => {
     e.preventDefault();
     setSearchbox(!searchbox);
     setIsExpanded(!isExpanded);
+    
 
   }
 
@@ -36,7 +37,7 @@ const SideNav = () => {
     <div className={style.navbar}>
       {searchbox && (
         <div className={style.search}>
-          <Search items={[]} />
+          <Search />
         </div>
       )}
 
@@ -50,37 +51,37 @@ const SideNav = () => {
         <div className={style.list}>
           <div className={style.options}>
             <Link to="/" className={style.optionsLink}>
-              <GoHome className={`${!isExpanded ? style.collapseIcon : style.expandIcon}`} />
+              <GoHome className={`${!isExpanded ? style.collapseIcon : style.expandIcon}`} style={{"fontSize": "40px"}}/>
               {isExpanded ? "Home" : ""}
             </Link>
           </div>
           <div className={style.options}>
             <Link to="/" className={style.optionsLink} onClick={handleSearch}>
-              <GoSearch className={`${!isExpanded ? style.collapseIcon : style.expandIcon}`} />
+              <GoSearch className={`${!isExpanded ? style.collapseIcon : style.expandIcon}`} style={{"fontSize": "40px"}}/>
               {isExpanded ? "Search" : ""}
             </Link>
           </div>
           <div className={style.options}>
             <Link to="/" className={style.optionsLink}>
-              <BsCameraReels className={`${!isExpanded ? style.collapseIcon : style.expandIcon}`} />
+              <BsCameraReels className={`${!isExpanded ? style.collapseIcon : style.expandIcon}`} style={{"fontSize": "40px"}}/>
               {isExpanded ? "Reels" : ""}
             </Link>
           </div>
           <div className={style.options}>
             <Link to="/" className={style.optionsLink}>
-              <BiMessageRoundedDots className={`${!isExpanded ? style.collapseIcon : style.expandIcon}`} />
+              <BiMessageRoundedDots className={`${!isExpanded ? style.collapseIcon : style.expandIcon}`} style={{"fontSize": "40px"}}/>
               {isExpanded ? "Messages" : ""}
             </Link>
           </div>
           <div className={style.options}>
-            <Link to="/" className={style.optionsLink}>
-              <FaRegPlusSquare className={`${!isExpanded ? style.collapseIcon : style.expandIcon}`} />
+            <Link to="/create" className={style.optionsLink}>
+              <FaRegPlusSquare className={`${!isExpanded ? style.collapseIcon : style.expandIcon}`} style={{"fontSize": "40px"}}/>
               {isExpanded ? "Create" : ""}
             </Link>
           </div>
           <div className={style.options}>
             <Link to="/login" className={style.optionsLink} onClick={handleLogout} >
-              <MdLogout className={`${!isExpanded ? style.collapseIcon : style.expandIcon}`} />
+              <MdLogout className={`${!isExpanded ? style.collapseIcon : style.expandIcon}`} style={{"fontSize": "40px"}}/>
               {isExpanded ? "Logout" : ""}
             </Link>
 

@@ -36,7 +36,8 @@
   height: auto;
 }
 .list{
-  top:135px
+  position: absolute;
+  top:125px;
 }
 .options{
   display: flex;

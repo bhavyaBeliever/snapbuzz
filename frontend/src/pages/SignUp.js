@@ -20,7 +20,7 @@ const SignUp = () => {
   const [isLoading, setIsLoading] = useState(false); 
   const [error, setError] = useState("");
   useEffect(() => {
-    fetch('/users/getUsersInfo')
+    fetch('/users/getUsernames')
       .then(response => response.json())
       .then(data => {
         setUsernameList(data);
