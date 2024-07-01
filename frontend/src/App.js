@@ -6,12 +6,18 @@ import Home from "./pages/Home";
 
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useAuthContext } from "./hooks/useAuthContext";
+import Create from "./pages/Create";
 function App() {
   const { user } = useAuthContext();
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
+          <Route
+            path="/create"
+            exact
+            element={user ? <Create /> : <Navigate to="/login" />}
+          />
           <Route
             path="/"
             exact
@@ -27,7 +33,6 @@ function App() {
             exact
             element={!user ? <SignUp /> : <Navigate to="/" />}
           />
-          
         </Routes>
       </BrowserRouter>
     </div>

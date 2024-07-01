@@ -45,10 +45,10 @@ const userSchema = new mongoose.Schema(
       type: Array,
       default: [],
     },
-    posts: {
-      type: Array,
-      default: [],
-    },
+    
+  posts: [
+    { type: mongoose.Schema.Types.ObjectId, ref: 'Post' }
+  ],
     createdAt: {
       type: Date,
       default: Date.now(),
