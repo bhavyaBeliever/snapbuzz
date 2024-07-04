@@ -13,6 +13,8 @@ import { MdLogout } from 'react-icons/md';
 import Search from '../components/Search';
 
 const SideNav = () => {
+
+  const user = JSON.parse(localStorage.getItem('user'));
   const [isExpanded, setIsExpanded] = useState(true);
   const [searchbox, setSearchbox] = useState(false);
   const [usersInfo, setUsersInfo] = useState([]);
@@ -32,6 +34,7 @@ const SideNav = () => {
     
 
   }
+ 
 
   return (
     <div className={style.navbar}>
@@ -86,6 +89,13 @@ const SideNav = () => {
             </Link>
 
           </div>
+
+        <div className={style.options}>
+          <Link to={`/${user.username}`} className={style.optionsLink}>
+            
+            Profile
+          </Link>
+        </div>
         </div>
       </div>
     </div>
